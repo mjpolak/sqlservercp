@@ -2,7 +2,7 @@
 
 It is dockerized utility that allows to copy database schema and data between two servers SQL Servers
 
-It doesn not require `sysadmin` permissions, used need to have `GRANT`-ed permission for database `CONTROL`.
+It does not require `sysadmin` permissions, user only need to have `GRANT`-ed permission for database `CONTROL`.
 
 ## Why not use bacpac, bak? 
 
@@ -21,3 +21,17 @@ SQL Server 2016
  3. Then, it try to publish schema via [sqlpackage] to target database, removing all non existing objects on target, and objects that are blocking migration. (All `sqlpackage` `properties` can be checked [execute.sh](execute.sh))
  4. All data are removed from target tables.
  5. Then [bcp](https://docs.microsoft.com/en-us/sql/tools/bcp-utility?view=sql-server-ver15) is used to bulk insert all data.
+
+## How to use it?
+
+Image require to fill 4 enviroment variables:
+ - `SOURCE_DB_HOST`= Source host
+ - `SOURCE_DB_NAME`= Source database name
+ - `SOURCE_DB_PASSWORD`= Source user password
+ - `SOURCE_DB_USER`= Source user name
+ - `SOURCE_DB_PORT`= Source db port
+ - `TARGET_DB_HOST`= Target host
+ - `TARGET_DB_NAME`= Target database name
+ - `TARGET_DB_PASSWORD`= Target user password
+ - `TARGET_DB_USER`= Target user
+ - `TARGET_DB_PORT`= Target port
