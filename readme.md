@@ -6,11 +6,17 @@ It does not require `sysadmin` permissions, user only need to have `GRANT`-ed pe
 
 ## Why not use bacpac, bak? 
 
-Please read my question on stackoverflow: [HERE]([https://link](https://stackoverflow.com/questions/62877740/copy-content-of-sql-server-2016-db))
+Please read my question on stackoverflow: [HERE](https://stackoverflow.com/questions/62877740/copy-content-of-sql-server-2016-db)
 
 If you know other soultion give me a message!
 
 ## Tested version:
+
+|  Source\Target| 2016 SP2      | 2019          
+| ------------- | ------------- |:-------------:
+| *2016 SP2*    | Yes           | Yes
+| *2019         | No            | Yes      
+
 
 SQL Server 2016
 
@@ -24,7 +30,8 @@ SQL Server 2016
 
 ## How to use it?
 
-Image require to fill 4 enviroment variables:
+### Enviroment variables
+Image require to fill enviroment variables:
  - `SOURCE_DB_HOST`= Source host
  - `SOURCE_DB_NAME`= Source database name
  - `SOURCE_DB_PASSWORD`= Source user password
@@ -35,3 +42,9 @@ Image require to fill 4 enviroment variables:
  - `TARGET_DB_PASSWORD`= Target user password
  - `TARGET_DB_USER`= Target user
  - `TARGET_DB_PORT`= Target port
+
+### Docker compose 
+
+Easies way of running util is to copy environment config `.env_template`, fill all varaibles, save it as `.env`.
+
+Then just execute `docker-compose up`

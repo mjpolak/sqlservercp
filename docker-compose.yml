@@ -2,10 +2,6 @@ version: '3.5'
 
 services:
   sqlcpy:
-    image: sqlcpy
-    build:
-      dockerfile: Dockerfile
-      context: ./
-      network: host
+    image: mjpolak/sqlservercp
     env_file:
     - .env
