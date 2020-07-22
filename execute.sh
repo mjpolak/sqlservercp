@@ -21,6 +21,6 @@ echo 'start extracting schema' &&
     echo "end of removing old data" &&
     echo "start of importing data" &&
     echo "$tables" | while read line; do
-        bcp "[dbo].[${line}]" IN "/tables/${line}.bcp" -d ${TARGET_DB_NAME} -P ${TARGET_DB_PASSWORD} -U ${TARGET_DB_USER} -S "${TARGET_DB_HOST},${TARGET_DB_PORT}" -n || exit 1
+        bcp "[dbo].[${line}]" IN "/tables/${line}.bcp" -E -d ${TARGET_DB_NAME} -P ${TARGET_DB_PASSWORD} -U ${TARGET_DB_USER} -S "${TARGET_DB_HOST},${TARGET_DB_PORT}" -n || exit 1
     done &&
     echo 'All done'
