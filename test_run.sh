@@ -1,3 +1,4 @@
 #!bin/bash
-
-docker-compose build && docker-compose run --rm sqlcpy
+docker-compose pull && \
+docker-compose build && \
+docker-compose run --rm sqlcpy
